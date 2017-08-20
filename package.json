@@ -1,0 +1,24 @@
+{
+  "name": "node-basic",
+  "version": "1.0.0",
+  "description": "Basic node back-end implementing a mongo db conexion",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acervantest/node_mongo_start.git"
+  },
+  "author": "acervantes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acervantest/node_mongo_start/issues"
+  },
+  "homepage": "https://github.com/acervantest/node_mongo_start#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  }
+}

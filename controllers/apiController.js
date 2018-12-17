@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 module.exports = function(app){
     
     app.use(bodyParser.json());
+
     app.use(bodyParser.urlencoded({extended: true}));
     
     app.get('/api/allCourses', function(req, res){
@@ -15,7 +16,7 @@ module.exports = function(app){
         });
     });
     
-    app.get('/api/courses/:cname', function(req, res){
+    app.get('/api/course/:cname', function(req, res){
            
         Course.find({ title: req.params.cname },
            function(err, courses){

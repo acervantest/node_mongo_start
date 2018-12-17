@@ -5,7 +5,7 @@ module.exports = function(app){
     app.get('/api/setupCourses', function(req, res){
         
         //seed data
-        var starterCourses = [
+        var seedData = [
             {
                 title: 'Java',
                 description: 'Java 7 course description'
@@ -15,12 +15,12 @@ module.exports = function(app){
                 description: 'Javascript course description'
             },
             {
-                title: 'Springboot',
-                description: 'Spring boot course description'
+                title: 'Node.js',
+                description: 'Node.js course description'
             }
         ];
        
-        Courses.create(starterCourses, function(err, results){
+        Courses.create(seedData, function(err, results){
             res.send(results);
         });
     });

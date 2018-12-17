@@ -1,17 +1,20 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var config = require('./config');
-var setupController = require('./controllers/setupController');
-var apiController = require('./controllers/apiController');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const config = require('./config');
+const setupController = require('./controllers/setupController');
+const apiController = require('./controllers/apiController');
 
-var port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use('/assets', express.static(__dirname + '/public'));
+app.use('/assets', 
+  express.static(__dirname + '/public')
+);
 
 mongoose.connect(config.getDbConnectionString(), { useMongoClient: true });
 
 setupController(app);
+
 apiController(app);
 
-app.listen(port);
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
